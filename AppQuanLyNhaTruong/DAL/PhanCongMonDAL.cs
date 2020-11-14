@@ -9,21 +9,22 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class DanhSachTietDayDAL : SQL.SQLHelper, CInterface<DanhSachTietDay>
+    class PhanCongMonDAL : SQL.SQLHelper, CInterface<PhanCongMon>
     {
-        public async Task<int> CapNhap(DanhSachTietDay obj)
+        public async Task<int> CapNhap(PhanCongMon obj)
         {
             return await ExecuteNonQuery(
-                "CapNhapDanhSachTietDay",
-                new SqlParameter("@IDPhanCongDay", SqlDbType.BigInt) { Value = obj.IDPhanCongDay },
-                new SqlParameter("@IDSV", SqlDbType.Int) { Value = obj.IDSV }
-                );
+                   "CapNhapPhanCongMon",
+               new SqlParameter("@ID", SqlDbType.BigInt) { Value = obj.ID },
+               new SqlParameter("@IDGV", SqlDbType.BigInt) { Value = obj.IDGV },
+               new SqlParameter("@IDMon", SqlDbType.BigInt) { Value = obj.IDMon }
+               );
         }
 
         public async Task<DataTable> Lay()
         {
             return await ExecuteQuery(
-                "XemDanhSachTietDay",
+                "XemPhanCongMon",
                 new SqlParameter("@ID", SqlDbType.BigInt) { Value = -1 }
                 );
         }
@@ -31,24 +32,25 @@ namespace DAL
         public async Task<DataTable> Lay(int ID)
         {
             return await ExecuteQuery(
-                "XemDanhSachTietDay",
+                "XemPhanCongMon",
                 new SqlParameter("@ID", SqlDbType.BigInt) { Value = ID }
                 );
         }
 
-        public async Task<int> Them(DanhSachTietDay obj)
+        public async Task<int> Them(PhanCongMon obj)
         {
             return await ExecuteNonQuery(
-                "ThemDanhSachTietDay",
-                new SqlParameter("@IDPhanCongDay", SqlDbType.BigInt) { Value = obj.IDPhanCongDay },
-                new SqlParameter("@IDSV", SqlDbType.Int) { Value = obj.IDSV }
-                );
+                   "ThemPhanCongMon",
+               new SqlParameter("@ID", SqlDbType.BigInt) { Value = obj.ID },
+               new SqlParameter("@IDGV", SqlDbType.BigInt) { Value = obj.IDGV },
+               new SqlParameter("@IDMon", SqlDbType.BigInt) { Value = obj.IDMon }
+               );
         }
 
         public async Task<int> Xoa(int ID)
         {
             return await ExecuteNonQuery(
-                "XoaDanhSachTietDay",
+                "XemPhanCongMon",
                 new SqlParameter("@ID", SqlDbType.BigInt) { Value = ID }
                 );
         }
