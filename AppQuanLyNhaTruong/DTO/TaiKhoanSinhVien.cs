@@ -60,5 +60,38 @@ namespace DTO
         public virtual Lop Lop { get; set; }
 
         public virtual NienKhoa NienKhoa { get; set; }
+        public HeDiem(int iD, string username,string pass,string tengv,bool gioitinh,int idLop,int idKhoa,int idNienKhoa,string sdt,string mail,string diachi,string noisinh,string hokhau)
+        {
+            ID = iD;
+            UserName = username;
+            Pass=pass;
+            TenGV=tengv;
+            GioiTinh=gioitinh;
+            IDLop=idLop;
+            IDKhoa=idKhoa;
+            IDNienKhoa=idNienKhoa;
+            SDT=sdt;
+            Mail=mail;
+            DiaChi=diachi;
+            NoiSinh=noisinh;
+            HoKhau=hokhau;
+        }
+
+        public HeDiem(DataRow dr)
+        {
+            ID = Convert.IsDBNull(dr["ID"]) ? -1 : Convert.ToInt32(dr["ID"]);
+            UserName = dr["UserName"].ToString();
+            Pass = dr["Pass"].ToString();
+            TenGV = dr["TenGiaoVien"].ToString();
+            GioiTinh = Convert.IsDBNull(dr["GioiTinh"]) ? -1 : Convert.ToBoolean(dr["GioiTinh"]);
+            IDLop = Convert.IsDBNull(dr["IDLop"]) ? -1 : Convert.ToInt32(dr["IDLop"]);
+            IDKhoa = Convert.IsDBNull(dr["IDKhoa"]) ? -1 : Convert.ToInt32(dr["IDKhoa"]);
+            IDNienKhoa = Convert.IsDBNull(dr["IDNienKhoa"]) ? -1 : Convert.ToInt32(dr["IDNienKhoa"]);       
+            SDT=dr["SDT"].ToString();
+            Mail=dr["Mail"].ToString();
+            DiaChi=dr["DiaChi"].ToString();
+            NoiSinh=dr["NoiSinh"].ToString();
+            HoKhau=dr["HoKhau"].ToString();
+        }
     }
 }

@@ -39,5 +39,24 @@ namespace DTO
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhanCongMon> PhanCongMons { get; set; }
+        public HeDiem(int iD, string username,string tengv,string gioitinh,string sdt,string mail)
+        {
+            ID = iD;
+            UserName=username;
+            TenGV=tengv;
+            GioiTinh=gioitinh;
+            SDT=sdt;
+            Mail=mail;
+        }
+
+        public HeDiem(DataRow dr)
+        {
+            ID = Convert.IsDBNull(dr["ID"]) ? -1 : Convert.ToInt32(dr["ID"]);
+            UserName = dr["UserName"].ToString();
+            TenGV = dr["TenGV"].ToString();
+            GioiTinh = dr["GioiTinh"].ToString();
+            SDT = dr["SDT"].ToString();
+            Mail = dr["Mail"].ToString();
+        }
     }
 }

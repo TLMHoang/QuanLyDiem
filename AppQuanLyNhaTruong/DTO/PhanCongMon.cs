@@ -27,5 +27,18 @@ namespace DTO
         public virtual ICollection<PhanCongDay> PhanCongDays { get; set; }
 
         public virtual TaiKhoanTruong TaiKhoanTruong { get; set; }
+        public HeDiem(int iD)
+        {
+            ID = iD;
+            IDGV=iD;
+            IDMon=iD;
+        }
+
+        public HeDiem(DataRow dr)
+        {
+            ID = Convert.IsDBNull(dr["ID"]) ? -1 : Convert.ToInt32(dr["ID"]);
+            IDGV = Convert.IsDBNull(dr["ID"]) ? -1 : Convert.ToInt32(dr["ID"]);
+            IDMon = Convert.IsDBNull(dr["ID"]) ? -1 : Convert.ToInt32(dr["ID"]);
+        }
     }
 }
