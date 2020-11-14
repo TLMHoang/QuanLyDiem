@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class LKHeLoaiDiem
+    public class DanhSachTietDay
     {
-        public int IDHe { get; set; }
-        public int IDLoai { get; set; }
-
+        public int IDPhanCongDay { get; set; }
+        public long? IDSV { get; set; }
     }
 }
