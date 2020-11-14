@@ -58,7 +58,7 @@ namespace DAL
 
             return a;
         }
-
+        //--------------------------------------------------------------------------------------------------------
         public async Task<int> Xoa(Lop obj)
         {
             var a = await ExecuteNonQuery("DeleteLop", new SqlParameter("@ID", SqlDbType.Int) { Value = obj.ID });

@@ -24,7 +24,7 @@ namespace DTO
         public string Pass { get; set; }
 
         [StringLength(50)]
-        public string TenGV { get; set; }
+        public string TenSV { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? NamSinh { get; set; }
@@ -60,12 +60,12 @@ namespace DTO
         public virtual Lop Lop { get; set; }
 
         public virtual NienKhoa NienKhoa { get; set; }
-        public HeDiem(int iD, string username,string pass,string tengv,bool gioitinh,int idLop,int idKhoa,int idNienKhoa,string sdt,string mail,string diachi,string noisinh,string hokhau)
+        public TaiKhoanSinhVien(int iD, string username,string pass,string tensv,bool gioitinh,int idLop,int idKhoa,int idNienKhoa,string sdt,string mail,string diachi,string noisinh,string hokhau)
         {
             ID = iD;
             UserName = username;
             Pass=pass;
-            TenGV=tengv;
+            TenSV=tensv;
             GioiTinh=gioitinh;
             IDLop=idLop;
             IDKhoa=idKhoa;
@@ -77,7 +77,7 @@ namespace DTO
             HoKhau=hokhau;
         }
 
-        public HeDiem(DataRow dr)
+        public TaiKhoanSinhVien(DataRow dr)
         {
             ID = Convert.IsDBNull(dr["ID"]) ? -1 : Convert.ToInt32(dr["ID"]);
             UserName = dr["UserName"].ToString();
