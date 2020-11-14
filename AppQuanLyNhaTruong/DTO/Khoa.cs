@@ -5,7 +5,6 @@ namespace DTO
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data;
-    using System.Data.Entity.Spatial;
 
     [Table("nxtckedu_H.Khoa")]
     public partial class Khoa
