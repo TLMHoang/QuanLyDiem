@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class HeDiemDAL : SQL.SQLHelper, CInterface<HeDiem>
+    public class HeDiemDAL : SQL.SQLHelper, CInterface<HeDiem>
     {
         public async Task<int> CapNhap(HeDiem obj)
         {
