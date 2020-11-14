@@ -6,24 +6,15 @@ using System.Data;
 
 namespace DTO
 {
-    [Table("nxtckedu_H.HeDiem")]
     public partial class HeDiem
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        
-
         public int ID { get; set; }
 
-        [StringLength(50)]
         public string Ten { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MonHoc> MonHocs { get; set; }
 
 
         public HeDiem()
         {
-            MonHocs = new HashSet<MonHoc>();
         }
 
         public HeDiem(int iD, string ten)

@@ -1,13 +1,8 @@
 namespace DTO
 {
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
     using System.Data;
-    using System.Data.Entity.Spatial;
 
-    [Table("nxtckedu_H.Diem")]
     public partial class Diem
     {
         
@@ -19,7 +14,6 @@ namespace DTO
 
         public int? IDPhanCongDay { get; set; }
 
-        [Column("Diem")]
         public double Diem1 { get; set; }
 
         public virtual LoaiDiem LoaiDiem { get; set; }
