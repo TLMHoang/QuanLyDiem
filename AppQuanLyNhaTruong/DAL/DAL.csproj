@@ -48,6 +48,9 @@
     <Compile Include="DanhSachTietDayDAL.cs" />
     <Compile Include="DiemDAL.cs" />
     <Compile Include="KhoaDAL.cs" />
+    <Compile Include="LKHeLoaiDiem.cs" />
+    <Compile Include="LKHeLoaiDiemDAL.cs" />
+    <Compile Include="LoaiDiemDAL.cs" />
     <Compile Include="LopDAL.cs" />
     <Compile Include="NienKhoaDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
