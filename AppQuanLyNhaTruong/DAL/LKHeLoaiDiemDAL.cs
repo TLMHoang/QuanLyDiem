@@ -5,36 +5,52 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using DTO;
+using System.Data.SqlClient;
 
 namespace DAL
 {
     public class LKHeLoaiDiemDAL : SQL.SQLHelper, CInterface<LKHeLoaiDiem>
     {
-        DBQuanLyDiem db = new DBQuanLyDiem();
-        public Task<int> CapNhap(LKHeLoaiDiem obj)
+        public async Task<int> CapNhap(LKHeLoaiDiem obj)
         {
-            db.TaiKhoanSinhViens.
-            throw new NotImplementedException();
+            return await ExecuteNonQuery(
+                "CapNhapHeLoaiDiem",
+                new SqlParameter("@ID", SqlDbType.BigInt) { Value = obj.IDHe },
+                new SqlParameter("@IDLoaiDiem", SqlDbType.Int) { Value = obj.IDLoai }           
+                );
         }
 
-        public Task<DataTable> Lay()
+        public async Task<DataTable> Lay()
         {
-            throw new NotImplementedException();
+            return await ExecuteQuery(
+                "XemHeLoaiDiem",
+                new SqlParameter("@ID", SqlDbType.BigInt) { Value = -1 }
+                );
         }
 
-        public Task<DataTable> Lay(int ID)
+        public async Task<DataTable> Lay(int ID)
         {
-            throw new NotImplementedException();
+            return await ExecuteQuery(
+                "XemHeLoaiDiem",
+                new SqlParameter("@ID", SqlDbType.BigInt) { Value =ID  }
+                );
         }
 
-        public Task<int> Them(LKHeLoaiDiem obj)
+        public async Task<int> Them(LKHeLoaiDiem obj)
         {
-            throw new NotImplementedException();
+            return await ExecuteNonQuery(
+                "ThemHeLoaiDiem",
+                new SqlParameter("@ID", SqlDbType.BigInt) { Value = obj.IDHe },
+                new SqlParameter("@IDLoaiDiem", SqlDbType.Int) { Value = obj.IDLoai }
+                );
         }
 
-        public Task<int> Xoa(int ID)
+        public async Task<int> Xoa(int ID)
         {
-            throw new NotImplementedException();
+            return await ExecuteNonQuery(
+                "XoaHeLoaDiem",
+                new SqlParameter("@ID", SqlDbType.BigInt) { Value = ID }
+                );
         }
     }
 }
