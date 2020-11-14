@@ -1,11 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
+
 namespace DTO
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
-
     [Table("nxtckedu_H.TaiKhoanSinhVien")]
     public partial class TaiKhoanSinhVien
     {
@@ -82,8 +82,8 @@ namespace DTO
             ID = Convert.IsDBNull(dr["ID"]) ? -1 : Convert.ToInt32(dr["ID"]);
             UserName = dr["UserName"].ToString();
             Pass = dr["Pass"].ToString();
-            TenGV = dr["TenGiaoVien"].ToString();
-            GioiTinh = Convert.IsDBNull(dr["GioiTinh"]) ? -1 : Convert.ToBoolean(dr["GioiTinh"]);
+            TenSV = dr["TenSinhVien"].ToString();
+            GioiTinh = Convert.ToBoolean(dr["GioiTinh"]);
             IDLop = Convert.IsDBNull(dr["IDLop"]) ? -1 : Convert.ToInt32(dr["IDLop"]);
             IDKhoa = Convert.IsDBNull(dr["IDKhoa"]) ? -1 : Convert.ToInt32(dr["IDKhoa"]);
             IDNienKhoa = Convert.IsDBNull(dr["IDNienKhoa"]) ? -1 : Convert.ToInt32(dr["IDNienKhoa"]);       

@@ -45,8 +45,12 @@
   <ItemGroup>
     <Compile Include="CInterface.cs" />
     <Compile Include="DiemDAL.cs" />
+    <Compile Include="KhoaDAL.cs" />
+    <Compile Include="LopDAL.cs" />
+    <Compile Include="NienKhoaDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQL\SQLHelper.cs" />
+    <Compile Include="TaiKhoanSinhVienDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

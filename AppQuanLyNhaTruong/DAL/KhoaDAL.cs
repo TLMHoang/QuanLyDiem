@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class LopDAL : SQL.SQLHelper, CInterface<Lop>
+    public class KhoaDAL : SQL.SQLHelper, CInterface<Khoa>
     {
-        public async Task<int> CapNhap(Lop obj)
+        public async Task<int> CapNhap(Khoa obj)
         {
-               return await ExecuteNonQuery(
-                   "CapNhapLop",
+            return await ExecuteNonQuery(
+                   "CapNhapKhoa",
                new SqlParameter("@ID", SqlDbType.BigInt) { Value = obj.ID },
                new SqlParameter("@Ten", SqlDbType.Char) { Value = obj.Ten }
                );
@@ -23,7 +23,7 @@ namespace DAL
         public async Task<DataTable> Lay()
         {
             return await ExecuteQuery(
-                "XemLop",
+                "XemKhoa",
                 new SqlParameter("@ID", SqlDbType.BigInt) { Value = -1 }
                 );
         }
@@ -31,15 +31,15 @@ namespace DAL
         public async Task<DataTable> Lay(int ID)
         {
             return await ExecuteQuery(
-                "XemLop",
+                "XemKhoa",
                 new SqlParameter("@ID", SqlDbType.BigInt) { Value = ID }
                 );
         }
 
-        public async Task<int> Them(Lop obj)
+        public async Task<int> Them(Khoa obj)
         {
             return await ExecuteNonQuery(
-                   "ThemLop",
+                   "ThemKhoa",
                new SqlParameter("@ID", SqlDbType.BigInt) { Value = obj.ID },
                new SqlParameter("@Ten", SqlDbType.Char) { Value = obj.Ten }
                );
@@ -48,7 +48,7 @@ namespace DAL
         public async Task<int> Xoa(int ID)
         {
             return await ExecuteNonQuery(
-                "XoaLop",
+                "XoaKhoa",
                 new SqlParameter("@ID", SqlDbType.BigInt) { Value = ID }
                 );
         }
