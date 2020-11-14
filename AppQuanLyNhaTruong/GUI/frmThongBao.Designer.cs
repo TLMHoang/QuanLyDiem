@@ -164,14 +164,6 @@
             this.lblThongTinLop.TabIndex = 7;
             this.lblThongTinLop.Text = "label1";
             // 
-            // bsThongBaoTruong
-            // 
-            this.bsThongBaoTruong.DataSource = typeof(DTO.ThongBaoTruong);
-            // 
-            // bsThongBaoLop
-            // 
-            this.bsThongBaoLop.DataSource = typeof(DTO.ThongBaoLop);
-            // 
             // frmThongBao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

@@ -33,16 +33,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtTimKiemID = new System.Windows.Forms.TextBox();
             this.dgvDSHS = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaySinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioiTinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noiSinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsHS = new System.Windows.Forms.BindingSource(this.components);
             this.dgvDSTB = new System.Windows.Forms.DataGridView();
-            this.sTTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDHocSinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noiDungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsThongBao = new System.Windows.Forms.BindingSource(this.components);
             this.rtbNhapNoiDung = new System.Windows.Forms.RichTextBox();
             this.lblNhapNoiDung = new System.Windows.Forms.Label();
@@ -98,12 +90,6 @@
             // 
             this.dgvDSHS.AutoGenerateColumns = false;
             this.dgvDSHS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSHS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.tenDataGridViewTextBoxColumn,
-            this.ngaySinhDataGridViewTextBoxColumn,
-            this.gioiTinhDataGridViewTextBoxColumn,
-            this.noiSinhDataGridViewTextBoxColumn});
             this.dgvDSHS.DataSource = this.bsHS;
             this.dgvDSHS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSHS.Location = new System.Drawing.Point(3, 27);
@@ -115,54 +101,11 @@
             this.dgvDSHS.TabIndex = 2;
             this.dgvDSHS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSHS_CellClick);
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID Học Sinh";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tenDataGridViewTextBoxColumn
-            // 
-            this.tenDataGridViewTextBoxColumn.DataPropertyName = "Ten";
-            this.tenDataGridViewTextBoxColumn.HeaderText = "Tên";
-            this.tenDataGridViewTextBoxColumn.Name = "tenDataGridViewTextBoxColumn";
-            this.tenDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ngaySinhDataGridViewTextBoxColumn
-            // 
-            this.ngaySinhDataGridViewTextBoxColumn.DataPropertyName = "NgaySinh";
-            this.ngaySinhDataGridViewTextBoxColumn.HeaderText = "Ngày Sinh";
-            this.ngaySinhDataGridViewTextBoxColumn.Name = "ngaySinhDataGridViewTextBoxColumn";
-            this.ngaySinhDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // gioiTinhDataGridViewTextBoxColumn
-            // 
-            this.gioiTinhDataGridViewTextBoxColumn.DataPropertyName = "GioiTinh";
-            this.gioiTinhDataGridViewTextBoxColumn.HeaderText = "Giới Tính";
-            this.gioiTinhDataGridViewTextBoxColumn.Name = "gioiTinhDataGridViewTextBoxColumn";
-            this.gioiTinhDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // noiSinhDataGridViewTextBoxColumn
-            // 
-            this.noiSinhDataGridViewTextBoxColumn.DataPropertyName = "NoiSinh";
-            this.noiSinhDataGridViewTextBoxColumn.HeaderText = "Nơi Sinh";
-            this.noiSinhDataGridViewTextBoxColumn.Name = "noiSinhDataGridViewTextBoxColumn";
-            this.noiSinhDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bsHS
-            // 
-            this.bsHS.DataSource = typeof(DTO.ThongTinHS);
-            // 
             // dgvDSTB
             // 
             this.dgvDSTB.AutoGenerateColumns = false;
             this.dgvDSTB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSTB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSTB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sTTDataGridViewTextBoxColumn,
-            this.iDHocSinhDataGridViewTextBoxColumn,
-            this.noiDungDataGridViewTextBoxColumn});
             this.dgvDSTB.DataSource = this.bsThongBao;
             this.dgvDSTB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSTB.Location = new System.Drawing.Point(3, 327);
@@ -175,31 +118,6 @@
             this.dgvDSTB.TabIndex = 3;
             this.dgvDSTB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSTB_CellClick);
             this.dgvDSTB.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvDSTB_UserDeletingRow);
-            // 
-            // sTTDataGridViewTextBoxColumn
-            // 
-            this.sTTDataGridViewTextBoxColumn.DataPropertyName = "STT";
-            this.sTTDataGridViewTextBoxColumn.HeaderText = "STT";
-            this.sTTDataGridViewTextBoxColumn.Name = "sTTDataGridViewTextBoxColumn";
-            this.sTTDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDHocSinhDataGridViewTextBoxColumn
-            // 
-            this.iDHocSinhDataGridViewTextBoxColumn.DataPropertyName = "IDHocSinh";
-            this.iDHocSinhDataGridViewTextBoxColumn.HeaderText = "ID Học Sinh";
-            this.iDHocSinhDataGridViewTextBoxColumn.Name = "iDHocSinhDataGridViewTextBoxColumn";
-            this.iDHocSinhDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // noiDungDataGridViewTextBoxColumn
-            // 
-            this.noiDungDataGridViewTextBoxColumn.DataPropertyName = "NoiDung";
-            this.noiDungDataGridViewTextBoxColumn.HeaderText = "Nội Dung";
-            this.noiDungDataGridViewTextBoxColumn.Name = "noiDungDataGridViewTextBoxColumn";
-            this.noiDungDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bsThongBao
-            // 
-            this.bsThongBao.DataSource = typeof(DTO.ThongBaoHS);
             // 
             // rtbNhapNoiDung
             // 

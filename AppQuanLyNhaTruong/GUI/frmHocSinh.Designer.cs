@@ -66,18 +66,8 @@
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.dgvHocSinh = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoiSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DanToc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TonGiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDLop = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.TenBo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDTBo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenMe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDTMe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsThongTinHS)).BeginInit();
@@ -212,10 +202,6 @@
             this.txtNoiSinh.Size = new System.Drawing.Size(206, 22);
             this.txtNoiSinh.TabIndex = 2;
             this.txtNoiSinh.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmHocSinh_KeyUp);
-            // 
-            // bsThongTinHS
-            // 
-            this.bsThongTinHS.DataSource = typeof(DTO.ThongTinHS);
             // 
             // txtTen
             // 
@@ -541,18 +527,8 @@
             this.dgvHocSinh.BackgroundColor = System.Drawing.Color.MediumSpringGreen;
             this.dgvHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHocSinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Ten,
-            this.GioiTinh,
-            this.NoiSinh,
-            this.NgaySinh,
             this.DanToc,
-            this.TonGiao,
-            this.IDLop,
-            this.TenBo,
-            this.SDTBo,
-            this.TenMe,
-            this.SDTMe});
+            this.IDLop});
             this.tableLayoutPanel1.SetColumnSpan(this.dgvHocSinh, 2);
             this.dgvHocSinh.DataSource = this.bsThongTinHS;
             this.dgvHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -566,56 +542,12 @@
             this.dgvHocSinh.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvHocSinh_UserDeletingRow);
             this.dgvHocSinh.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmHocSinh_KeyUp);
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "Mã";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 50;
-            // 
-            // Ten
-            // 
-            this.Ten.DataPropertyName = "Ten";
-            this.Ten.HeaderText = "Tên";
-            this.Ten.Name = "Ten";
-            this.Ten.ReadOnly = true;
-            this.Ten.Width = 200;
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "GT - Nam";
-            this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.ReadOnly = true;
-            // 
-            // NoiSinh
-            // 
-            this.NoiSinh.DataPropertyName = "NoiSinh";
-            this.NoiSinh.HeaderText = "Nơi sinh";
-            this.NoiSinh.Name = "NoiSinh";
-            this.NoiSinh.ReadOnly = true;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.ReadOnly = true;
-            // 
             // DanToc
             // 
             this.DanToc.DataPropertyName = "DanToc";
             this.DanToc.HeaderText = "Dân tộc";
             this.DanToc.Name = "DanToc";
             this.DanToc.ReadOnly = true;
-            // 
-            // TonGiao
-            // 
-            this.TonGiao.DataPropertyName = "TonGiao";
-            this.TonGiao.HeaderText = "Tôn Giáo";
-            this.TonGiao.Name = "TonGiao";
-            this.TonGiao.ReadOnly = true;
             // 
             // IDLop
             // 
@@ -625,34 +557,6 @@
             this.IDLop.ReadOnly = true;
             this.IDLop.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.IDLop.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // TenBo
-            // 
-            this.TenBo.DataPropertyName = "TenBo";
-            this.TenBo.HeaderText = "Tên Bố";
-            this.TenBo.Name = "TenBo";
-            this.TenBo.ReadOnly = true;
-            // 
-            // SDTBo
-            // 
-            this.SDTBo.DataPropertyName = "SDTBo";
-            this.SDTBo.HeaderText = "SĐT Bố";
-            this.SDTBo.Name = "SDTBo";
-            this.SDTBo.ReadOnly = true;
-            // 
-            // TenMe
-            // 
-            this.TenMe.DataPropertyName = "TenMe";
-            this.TenMe.HeaderText = "Tên Mẹ";
-            this.TenMe.Name = "TenMe";
-            this.TenMe.ReadOnly = true;
-            // 
-            // SDTMe
-            // 
-            this.SDTMe.DataPropertyName = "SDTMe";
-            this.SDTMe.HeaderText = "SDT Mẹ";
-            this.SDTMe.Name = "SDTMe";
-            this.SDTMe.ReadOnly = true;
             // 
             // frmHocSinh
             // 

@@ -40,8 +40,6 @@
             this.txtLopHoc = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDanhSachLop = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenLopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsLop = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.btnDiem = new System.Windows.Forms.Button();
@@ -195,9 +193,6 @@
             this.dgvDanhSachLop.AutoGenerateColumns = false;
             this.dgvDanhSachLop.BackgroundColor = System.Drawing.Color.White;
             this.dgvDanhSachLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSachLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.tenLopDataGridViewTextBoxColumn});
             this.dgvDanhSachLop.DataSource = this.bsLop;
             this.dgvDanhSachLop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSachLop.Location = new System.Drawing.Point(2, 82);
@@ -212,25 +207,6 @@
             this.dgvDanhSachLop.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachLop_CellEndEdit);
             this.dgvDanhSachLop.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvDanhSachLop_UserAddedRow);
             this.dgvDanhSachLop.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvDanhSachLop_UserDeletingRow);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "Mã lớp";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // tenLopDataGridViewTextBoxColumn
-            // 
-            this.tenLopDataGridViewTextBoxColumn.DataPropertyName = "TenLop";
-            this.tenLopDataGridViewTextBoxColumn.HeaderText = "Tên Lớp";
-            this.tenLopDataGridViewTextBoxColumn.Name = "tenLopDataGridViewTextBoxColumn";
-            this.tenLopDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // bsLop
-            // 
-            this.bsLop.DataSource = typeof(DTO.Lop);
             // 
             // label1
             // 

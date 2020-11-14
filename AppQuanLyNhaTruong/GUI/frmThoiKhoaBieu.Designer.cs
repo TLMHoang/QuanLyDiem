@@ -32,10 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThoiKhoaBieu));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvTKB = new System.Windows.Forms.DataGridView();
-            this.iDLopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tietDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDMonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsTKB = new System.Windows.Forms.BindingSource(this.components);
             this.cboChonThu = new System.Windows.Forms.ComboBox();
             this.cboChonLop = new System.Windows.Forms.ComboBox();
@@ -138,11 +134,6 @@
             this.dgvTKB.AutoGenerateColumns = false;
             this.dgvTKB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTKB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTKB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDLopDataGridViewTextBoxColumn,
-            this.thuDataGridViewTextBoxColumn,
-            this.tietDataGridViewTextBoxColumn,
-            this.iDMonDataGridViewTextBoxColumn});
             this.tableLayoutPanel1.SetColumnSpan(this.dgvTKB, 2);
             this.dgvTKB.DataSource = this.bsTKB;
             this.dgvTKB.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -153,38 +144,6 @@
             this.dgvTKB.RowTemplate.Height = 24;
             this.dgvTKB.Size = new System.Drawing.Size(458, 546);
             this.dgvTKB.TabIndex = 0;
-            // 
-            // iDLopDataGridViewTextBoxColumn
-            // 
-            this.iDLopDataGridViewTextBoxColumn.DataPropertyName = "IDLop";
-            this.iDLopDataGridViewTextBoxColumn.HeaderText = "ID Lớp";
-            this.iDLopDataGridViewTextBoxColumn.Name = "iDLopDataGridViewTextBoxColumn";
-            this.iDLopDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // thuDataGridViewTextBoxColumn
-            // 
-            this.thuDataGridViewTextBoxColumn.DataPropertyName = "Thu";
-            this.thuDataGridViewTextBoxColumn.HeaderText = "Thứ ";
-            this.thuDataGridViewTextBoxColumn.Name = "thuDataGridViewTextBoxColumn";
-            this.thuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tietDataGridViewTextBoxColumn
-            // 
-            this.tietDataGridViewTextBoxColumn.DataPropertyName = "Tiet";
-            this.tietDataGridViewTextBoxColumn.HeaderText = "Tiết";
-            this.tietDataGridViewTextBoxColumn.Name = "tietDataGridViewTextBoxColumn";
-            this.tietDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDMonDataGridViewTextBoxColumn
-            // 
-            this.iDMonDataGridViewTextBoxColumn.DataPropertyName = "IDMon";
-            this.iDMonDataGridViewTextBoxColumn.HeaderText = "ID Môn";
-            this.iDMonDataGridViewTextBoxColumn.Name = "iDMonDataGridViewTextBoxColumn";
-            this.iDMonDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bsTKB
-            // 
-            this.bsTKB.DataSource = typeof(DTO.ThoiKhoaBieu);
             // 
             // cboChonThu
             // 
@@ -306,10 +265,6 @@
             this.cboMonTiet1.TabIndex = 20;
             this.cboMonTiet1.ValueMember = "ID";
             // 
-            // bsMonHoc
-            // 
-            this.bsMonHoc.DataSource = typeof(DTO.MonHoc);
-            // 
             // cboMonTiet2
             // 
             this.cboMonTiet2.DataSource = this.bsMonHoc2;
@@ -321,10 +276,6 @@
             this.cboMonTiet2.Size = new System.Drawing.Size(153, 24);
             this.cboMonTiet2.TabIndex = 21;
             this.cboMonTiet2.ValueMember = "ID";
-            // 
-            // bsMonHoc2
-            // 
-            this.bsMonHoc2.DataSource = typeof(DTO.MonHoc);
             // 
             // cboMonTiet3
             // 
@@ -338,10 +289,6 @@
             this.cboMonTiet3.TabIndex = 22;
             this.cboMonTiet3.ValueMember = "ID";
             // 
-            // bsMonHoc3
-            // 
-            this.bsMonHoc3.DataSource = typeof(DTO.MonHoc);
-            // 
             // cboMonTiet4
             // 
             this.cboMonTiet4.DataSource = this.bsMonHoc4;
@@ -354,10 +301,6 @@
             this.cboMonTiet4.TabIndex = 23;
             this.cboMonTiet4.ValueMember = "ID";
             // 
-            // bsMonHoc4
-            // 
-            this.bsMonHoc4.DataSource = typeof(DTO.MonHoc);
-            // 
             // cboMonTiet5
             // 
             this.cboMonTiet5.DataSource = this.bsMonHoc5;
@@ -369,10 +312,6 @@
             this.cboMonTiet5.Size = new System.Drawing.Size(153, 24);
             this.cboMonTiet5.TabIndex = 24;
             this.cboMonTiet5.ValueMember = "ID";
-            // 
-            // bsMonHoc5
-            // 
-            this.bsMonHoc5.DataSource = typeof(DTO.MonHoc);
             // 
             // bntLuuTiet1
             // 

@@ -35,9 +35,6 @@
             this.cbxLop = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.dgvDanhSachHS = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsHocSinh = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -55,28 +52,12 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvDiemHeSoMot = new System.Windows.Forms.DataGridView();
-            this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDMon1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Diem1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Loai1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DiemMieng1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.HocKy1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bsDiemHeSoMot = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvDiemHeSoHai = new System.Windows.Forms.DataGridView();
-            this.STT2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDMon2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Diem2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Loai2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.HocKy2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bsDiemHeSoHai = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgvDiemHocKy = new System.Windows.Forms.DataGridView();
-            this.STTHK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDMonHK = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.DiemHK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiHK = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.HocKyHK = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bsDiemHocKy = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -178,10 +159,6 @@
             this.dgvDanhSachHS.AutoGenerateColumns = false;
             this.dgvDanhSachHS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachHS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSachHS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Ten,
-            this.NgaySinh});
             this.tableLayoutPanel2.SetColumnSpan(this.dgvDanhSachHS, 2);
             this.dgvDanhSachHS.DataSource = this.bsHocSinh;
             this.dgvDanhSachHS.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -193,34 +170,6 @@
             this.dgvDanhSachHS.Size = new System.Drawing.Size(594, 443);
             this.dgvDanhSachHS.TabIndex = 3;
             this.dgvDanhSachHS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachHS_CellClick);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.FillWeight = 30.99354F;
-            this.ID.HeaderText = "Mã";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Ten
-            // 
-            this.Ten.DataPropertyName = "Ten";
-            this.Ten.FillWeight = 182.7411F;
-            this.Ten.HeaderText = "Tên học sinh";
-            this.Ten.Name = "Ten";
-            this.Ten.ReadOnly = true;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.FillWeight = 86.26535F;
-            this.NgaySinh.HeaderText = "Ngày Sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.ReadOnly = true;
-            // 
-            // bsHocSinh
-            // 
-            this.bsHocSinh.DataSource = typeof(DTO.ThongTinHS);
             // 
             // tableLayoutPanel3
             // 
@@ -452,13 +401,6 @@
             this.dgvDiemHeSoMot.AutoGenerateColumns = false;
             this.dgvDiemHeSoMot.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDiemHeSoMot.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiemHeSoMot.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT1,
-            this.IDMon1,
-            this.Diem1,
-            this.Loai1,
-            this.DiemMieng1,
-            this.HocKy1});
             this.dgvDiemHeSoMot.DataSource = this.bsDiemHeSoMot;
             this.dgvDiemHeSoMot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDiemHeSoMot.Location = new System.Drawing.Point(3, 18);
@@ -468,58 +410,6 @@
             this.dgvDiemHeSoMot.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvDiemHeSoMot_CellBeginEdit);
             this.dgvDiemHeSoMot.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiemHeSoMot_CellEndEdit);
             this.dgvDiemHeSoMot.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvDiemHeSoMot_UserDeletingRow);
-            // 
-            // STT1
-            // 
-            this.STT1.DataPropertyName = "STT";
-            this.STT1.HeaderText = "STT";
-            this.STT1.Name = "STT1";
-            this.STT1.ReadOnly = true;
-            // 
-            // IDMon1
-            // 
-            this.IDMon1.DataPropertyName = "IDMon";
-            this.IDMon1.HeaderText = "Môn";
-            this.IDMon1.Name = "IDMon1";
-            this.IDMon1.ReadOnly = true;
-            this.IDMon1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IDMon1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Diem1
-            // 
-            this.Diem1.DataPropertyName = "Diem";
-            this.Diem1.HeaderText = "Điểm";
-            this.Diem1.Name = "Diem1";
-            // 
-            // Loai1
-            // 
-            this.Loai1.DataPropertyName = "Loai";
-            this.Loai1.HeaderText = "Đạt";
-            this.Loai1.Name = "Loai1";
-            this.Loai1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Loai1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // DiemMieng1
-            // 
-            this.DiemMieng1.DataPropertyName = "DiemMieng";
-            this.DiemMieng1.HeaderText = "Điểm miệng";
-            this.DiemMieng1.Name = "DiemMieng1";
-            this.DiemMieng1.ReadOnly = true;
-            this.DiemMieng1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DiemMieng1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // HocKy1
-            // 
-            this.HocKy1.DataPropertyName = "HocKy";
-            this.HocKy1.HeaderText = "Học Kỳ I";
-            this.HocKy1.Name = "HocKy1";
-            this.HocKy1.ReadOnly = true;
-            this.HocKy1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.HocKy1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // bsDiemHeSoMot
-            // 
-            this.bsDiemHeSoMot.DataSource = typeof(DTO.DiemHeSoMot);
             // 
             // groupBox5
             // 
@@ -538,12 +428,6 @@
             this.dgvDiemHeSoHai.AutoGenerateColumns = false;
             this.dgvDiemHeSoHai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDiemHeSoHai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiemHeSoHai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT2,
-            this.IDMon2,
-            this.Diem2,
-            this.Loai2,
-            this.HocKy2});
             this.dgvDiemHeSoHai.DataSource = this.bsDiemHeSoHai;
             this.dgvDiemHeSoHai.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDiemHeSoHai.Location = new System.Drawing.Point(3, 18);
@@ -553,49 +437,6 @@
             this.dgvDiemHeSoHai.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvDiemHeSoHai_CellBeginEdit);
             this.dgvDiemHeSoHai.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiemHeSoHai_CellEndEdit);
             this.dgvDiemHeSoHai.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvDiemHeSoHai_UserDeletingRow);
-            // 
-            // STT2
-            // 
-            this.STT2.DataPropertyName = "STT";
-            this.STT2.HeaderText = "STT";
-            this.STT2.Name = "STT2";
-            this.STT2.ReadOnly = true;
-            // 
-            // IDMon2
-            // 
-            this.IDMon2.DataPropertyName = "IDMon";
-            this.IDMon2.HeaderText = "Môn";
-            this.IDMon2.Name = "IDMon2";
-            this.IDMon2.ReadOnly = true;
-            this.IDMon2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IDMon2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Diem2
-            // 
-            this.Diem2.DataPropertyName = "Diem";
-            this.Diem2.HeaderText = "Điểm";
-            this.Diem2.Name = "Diem2";
-            // 
-            // Loai2
-            // 
-            this.Loai2.DataPropertyName = "Loai";
-            this.Loai2.HeaderText = "Đạt";
-            this.Loai2.Name = "Loai2";
-            this.Loai2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Loai2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // HocKy2
-            // 
-            this.HocKy2.DataPropertyName = "HocKy";
-            this.HocKy2.HeaderText = "Học Kỳ I";
-            this.HocKy2.Name = "HocKy2";
-            this.HocKy2.ReadOnly = true;
-            this.HocKy2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.HocKy2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // bsDiemHeSoHai
-            // 
-            this.bsDiemHeSoHai.DataSource = typeof(DTO.DiemHeSoHai);
             // 
             // groupBox6
             // 
@@ -614,12 +455,6 @@
             this.dgvDiemHocKy.AutoGenerateColumns = false;
             this.dgvDiemHocKy.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDiemHocKy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiemHocKy.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STTHK,
-            this.IDMonHK,
-            this.DiemHK,
-            this.LoaiHK,
-            this.HocKyHK});
             this.dgvDiemHocKy.DataSource = this.bsDiemHocKy;
             this.dgvDiemHocKy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDiemHocKy.Location = new System.Drawing.Point(3, 18);
@@ -629,50 +464,6 @@
             this.dgvDiemHocKy.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvDiemHocKy_CellBeginEdit);
             this.dgvDiemHocKy.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiemHocKy_CellEndEdit);
             this.dgvDiemHocKy.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvDiemHocKy_UserDeletingRow);
-            // 
-            // STTHK
-            // 
-            this.STTHK.DataPropertyName = "STT";
-            this.STTHK.HeaderText = "STT";
-            this.STTHK.Name = "STTHK";
-            this.STTHK.ReadOnly = true;
-            this.STTHK.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // IDMonHK
-            // 
-            this.IDMonHK.DataPropertyName = "IDMon";
-            this.IDMonHK.HeaderText = "Môn";
-            this.IDMonHK.Name = "IDMonHK";
-            this.IDMonHK.ReadOnly = true;
-            this.IDMonHK.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IDMonHK.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // DiemHK
-            // 
-            this.DiemHK.DataPropertyName = "Diem";
-            this.DiemHK.HeaderText = "Điểm";
-            this.DiemHK.Name = "DiemHK";
-            // 
-            // LoaiHK
-            // 
-            this.LoaiHK.DataPropertyName = "Loai";
-            this.LoaiHK.HeaderText = "Đạt";
-            this.LoaiHK.Name = "LoaiHK";
-            this.LoaiHK.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.LoaiHK.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // HocKyHK
-            // 
-            this.HocKyHK.DataPropertyName = "HocKy";
-            this.HocKyHK.HeaderText = "Học Kỳ I";
-            this.HocKyHK.Name = "HocKyHK";
-            this.HocKyHK.ReadOnly = true;
-            this.HocKyHK.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.HocKyHK.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // bsDiemHocKy
-            // 
-            this.bsDiemHocKy.DataSource = typeof(DTO.DiemHocKy);
             // 
             // frmNhapDiem
             // 
