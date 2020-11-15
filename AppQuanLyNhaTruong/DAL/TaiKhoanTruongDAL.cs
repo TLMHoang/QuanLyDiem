@@ -29,7 +29,7 @@ namespace DAL
         public async Task<DataTable> Lay()
         {
             return await ExecuteQuery(
-                "XemTaiKhoanTruongDAL",
+                "XemTaiKhoanTruong",
                 new SqlParameter("@ID", SqlDbType.BigInt) { Value = -1 }
                 );
         }
@@ -37,7 +37,7 @@ namespace DAL
         public async Task<DataTable> Lay(int ID)
         {
             return await ExecuteQuery(
-                "XemTaiKhoanTruongDAL",
+                "XemTaiKhoanTruong",
                 new SqlParameter("@ID", SqlDbType.BigInt) { Value = ID }
                 );
         }
@@ -60,8 +60,17 @@ namespace DAL
         public async Task<int> Xoa(int ID)
         {
             return await ExecuteNonQuery(
-                "XoaTaiKhoanTruongDAL",
+                "XoaTaiKhoanTruong",
                 new SqlParameter("@ID", SqlDbType.BigInt) { Value = ID }
+                );
+        }
+
+        public async Task<DataTable> DangNhap(string userName, string passWord)
+        {
+            return await ExecuteQuery(
+                "DangNhapTruong",
+                new SqlParameter("@UserName", SqlDbType.VarChar) { Value = userName },
+                new SqlParameter("@Pass", SqlDbType.VarChar) { Value = passWord }
                 );
         }
     }

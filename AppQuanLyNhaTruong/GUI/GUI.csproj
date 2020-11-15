@@ -47,23 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAccountManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAccountManager.Designer.cs">
-      <DependentUpon>frmAccountManager.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDoiMatKhau.designer.cs">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmHocSinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHocSinh.Designer.cs">
-      <DependentUpon>frmHocSinh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -83,22 +71,10 @@
     <Compile Include="frmNhapDiem.Designer.cs">
       <DependentUpon>frmNhapDiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPhanCong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPhanCong.Designer.cs">
-      <DependentUpon>frmPhanCong.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAccountManager.resx">
-      <DependentUpon>frmAccountManager.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHocSinh.resx">
-      <DependentUpon>frmHocSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -108,9 +84,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhapDiem.resx">
       <DependentUpon>frmNhapDiem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPhanCong.resx">
-      <DependentUpon>frmPhanCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 
 namespace BAL
 {
-    public class TaiKhoanTruongBAL : CInterface<TaiKhoanTruong>
+    public class ChucVuBAL : CInterface<ChucVu>
     {
-        TaiKhoanTruongDAL db = new TaiKhoanTruongDAL();
-        public async Task<int> CapNhap(TaiKhoanTruong obj)
+
+        ChucVuDAL db = new ChucVuDAL();
+        public async Task<int> CapNhap(ChucVu obj)
         {
             return await db.CapNhap(obj);
         }
@@ -27,19 +28,19 @@ namespace BAL
             return await db.Lay(ID);
         }
 
-        public async Task<List<TaiKhoanTruong>> LayLst()
+        public async Task<List<ChucVu>> LayLst()
         {
-            List<TaiKhoanTruong> lst = new List<TaiKhoanTruong>();
+            List<ChucVu> lst = new List<ChucVu>();
 
             foreach (DataRow dr in (await LayDT()).Rows)
             {
-                lst.Add(new TaiKhoanTruong(dr));
+                lst.Add(new ChucVu(dr));
             }
 
             return lst;
         }
 
-        public async Task<int> Them(TaiKhoanTruong obj)
+        public async Task<int> Them(ChucVu obj)
         {
             return await db.Them(obj);
         }
@@ -49,11 +50,13 @@ namespace BAL
             return await db.Xoa(ID);
         }
 
-        public async Task<TaiKhoanTruong> DangNhap(string userName, string passWord)
+        public async Task<bool> CheckAdmin(int IDChucVu)
         {
-            DataTable dt = await db.DangNhap(userName, passWord);
+            List<ChucVu> lst = await LayLst();
 
-            return (dt.Rows.Count == 1) ? new TaiKhoanTruong(dt.Rows[0]) : null;
+            ChucVu res = lst.FirstOrDefault(p => p.Ten.Contains("admin"));
+
+            return (res == null) ? false : true;
         }
     }
 }

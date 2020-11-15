@@ -45,14 +45,14 @@ namespace GUI
 
             if (!CheckNull(txtUserName) && !CheckNull(txtPassWord))
             {
-                var dt = await account.DangNhap(txtUserName.Text, txtPassWord.Text);
-                if (dt != null)
+
+                Program.TK = await account.DangNhap(txtUserName.Text, txtPassWord.Text);
+                if (Program.TK != null)
                 {
                     //frmMain f = new frmMain();
                     //this.Hide();
                     //f.ShowDialog();
                     //this.Show();
-                    Program.TK = new TaiKhoanTruong(dt.Rows[0]);
                     
                     DialogResult = DialogResult.Yes;
                     this.FormClosing -= frmLogin_FormClosing;
@@ -157,6 +157,11 @@ namespace GUI
                 e.Cancel = true;
             }
             DialogResult = DialogResult.No;
+        }
+
+        private void txtUserName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChucVu.cs" />
     <Compile Include="DanhSachTietDay.cs" />
     <Compile Include="Diem.cs" />
     <Compile Include="HeDiem.cs" />

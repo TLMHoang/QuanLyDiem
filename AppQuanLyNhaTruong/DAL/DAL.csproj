@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChucVuDAL.cs" />
     <Compile Include="CInterface.cs" />
     <Compile Include="DanhSachTietDayDAL.cs" />
     <Compile Include="DiemDAL.cs" />

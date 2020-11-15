@@ -33,7 +33,7 @@ namespace GUI
             this.Visible = false;
             if (f.ShowDialog() == DialogResult.Yes)
             {
-                menuToolStripMenuItem.Text = "Xin chào - " + Program.TK.TaiKhoan;
+                menuToolStripMenuItem.Text = "Xin chào - " + Program.TK.TenGV;
                 this.Visible = true;
 
                 await LoadValue();
@@ -50,28 +50,12 @@ namespace GUI
 
         public async Task LoadLogin()
         {
-            if (Program.TK.Loai == 0)
+            if (await new ChucVuBAL().CheckAdmin(Program.TK.IDChucVu))
             {
                 btnPCMonHoc.Enabled = false;
                 btnAccountManagement.Enabled = false;
                 dgvDanhSachLop.ReadOnly = true;
                 dgvDanhSachLop.AllowUserToDeleteRows = false;
-                Program.gV = new ThongTinGV((await new ThongTinGVBAL().LayID(Program.TK.ID)).Rows[0]);
-                DataTable dt = await new GVCNBAL().LayDT(new GVCN(Program.TK.ID, -1));
-                if (dt.Rows.Count > 0)
-                {
-                    Program.gvcn = new GVCN(dt.Rows[0]);
-                }
-                Program.lstLopQL = await new PhanCongBAL().LayLst(Program.TK.ID);
-
-                if (Program.gvcn.IDLop == -1)
-                {
-                    btnThongBaoHS.Enabled = false;
-                    btnThoiKhoaBieu.Enabled = false;
-                    btnDiemDanh.Enabled = false;
-                    btnStudentManagement.Enabled = false;
-
-                }
             }
         }
 
@@ -81,7 +65,7 @@ namespace GUI
             bsLop.SuspendBinding();
             dgvDanhSachLop.SuspendLayout();
 
-            bsLop.DataSource = await lopBAL.LayDT();
+            //bsLop.DataSource = await lopBAL.LayDT();
 
             dgvDanhSachLop.ResumeLayout();
             bsLop.ResumeBinding();
@@ -92,19 +76,9 @@ namespace GUI
 
         private void btnStudentManagement_Click(object sender, EventArgs e)
         {
-            frmHocSinh f = new frmHocSinh(Program.TK, Program.gvcn);
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            
         }
 
-        private void btnThongBao_Click(object sender, EventArgs e)
-        {
-            GUI.frmThongBao f = new GUI.frmThongBao();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn thoát phần mềm ?", "Notification !", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
@@ -120,21 +94,9 @@ namespace GUI
         }
 
 
-
-        private void btnThongBaoRiengHS_Click(object sender, EventArgs e)
-        {
-            GUI.frmThongBaoTungHocSinh f = new GUI.frmThongBaoTungHocSinh();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
-
         private void btnAccountManagement_Click(object sender, EventArgs e)
         {
-            frmAccountManager f = new frmAccountManager();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            
         }
 
         private void dgvDanhSachLop_UserAddedRow(object sender, DataGridViewRowEventArgs e)
@@ -149,7 +111,7 @@ namespace GUI
                 if (MessageBox.Show("Bạn muốn xóa dữ liệu không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     Lop l = new Lop((e.Row.DataBoundItem as DataRowView).Row);
-                    await lopBAL.Xoa(l);
+                    //await lopBAL.Xoa(l);
                 }
                 else
                 {
@@ -165,45 +127,45 @@ namespace GUI
 
         private async void dgvDanhSachLop_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                DataRowView drv = ((sender as DataGridView).Rows[e.RowIndex].DataBoundItem as DataRowView);
-                if (drv == null)
-                {
-                    return;
-                }
-                Lop l = new Lop(drv.Row);
-                if (l.TenLop == "")
-                {
-                    return;
-                }
-                if (l.ID == -1)
-                {
-                    await lopBAL.Them(l);
-                    bsLop.DataSource = await lopBAL.LayDT();
-                    dgvDanhSachLop.CurrentCell = dgvDanhSachLop.Rows[dgvDanhSachLop.RowCount - 1].Cells[1];
-                }
-                else
-                {
-                    if (OldName != l.TenLop)
-                    {
-                        await lopBAL.CapNhap(OldName, l);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    DataRowView drv = ((sender as DataGridView).Rows[e.RowIndex].DataBoundItem as DataRowView);
+            //    if (drv == null)
+            //    {
+            //        return;
+            //    }
+            //    Lop l = new Lop(drv.Row);
+            //    if (l.TenLop == "")
+            //    {
+            //        return;
+            //    }
+            //    if (l.ID == -1)
+            //    {
+            //        await lopBAL.Them(l);
+            //        bsLop.DataSource = await lopBAL.LayDT();
+            //        dgvDanhSachLop.CurrentCell = dgvDanhSachLop.Rows[dgvDanhSachLop.RowCount - 1].Cells[1];
+            //    }
+            //    else
+            //    {
+            //        if (OldName != l.TenLop)
+            //        {
+            //            await lopBAL.CapNhap(OldName, l);
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
             
         }
 
         private void dgvDanhSachLop_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            if (dgvDanhSachLop.Rows[dgvDanhSachLop.CurrentCell.RowIndex].Cells[1].Value.ToString() != "")
-            {
-                OldName = dgvDanhSachLop.Rows[dgvDanhSachLop.CurrentCell.RowIndex].Cells[1].Value.ToString();
-            }
+            //if (dgvDanhSachLop.Rows[dgvDanhSachLop.CurrentCell.RowIndex].Cells[1].Value.ToString() != "")
+            //{
+            //    OldName = dgvDanhSachLop.Rows[dgvDanhSachLop.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            //}
         }
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
@@ -237,7 +199,7 @@ namespace GUI
             }
             else
             {
-                menuToolStripMenuItem.Text = "Xin chào - " + Program.TK.TaiKhoan;
+                menuToolStripMenuItem.Text = "Xin chào - " + Program.TK.TenGV;
                 this.Visible = true;
 
                 await LoadValue();
@@ -249,60 +211,31 @@ namespace GUI
             
         }
 
-        private void btnDiemDanh_Click(object sender, EventArgs e)
-        {
-            frmDiemDanh f = new frmDiemDanh();
-            this.Hide();
-
-            f.ShowDialog();
-
-            this.Show();
-        }
-
-        private void btnThoiKhoaBieu_Click(object sender, EventArgs e)
-        {
-            frmThoiKhoaBieu f = new frmThoiKhoaBieu();
-            this.Hide();
-
-            f.ShowDialog();
-
-            this.Show();
-        }
 
         private void btnDiem_Click(object sender, EventArgs e)
         {
-            frmNhapDiem f = new frmNhapDiem();
-            this.Hide();
+            //frmNhapDiem f = new frmNhapDiem();
+            //this.Hide();
 
-            f.ShowDialog();
+            //f.ShowDialog();
 
-            this.Show();
-        }
-
-        private void btnThongBaoChung_Click(object sender, EventArgs e)
-        {
-            frmThongBaoTungHocSinh f = new frmThongBaoTungHocSinh();
-            this.Hide();
-
-            f.ShowDialog();
-
-            this.Show();
+            //this.Show();
         }
 
         private async void btnPCMonHoc_Click(object sender, EventArgs e)
         {
-            frmPhanCong f = new frmPhanCong();
-            this.Hide();
+            //frmPhanCong f = new frmPhanCong();
+            //this.Hide();
 
-            f.ShowDialog();
+            //f.ShowDialog();
 
-            Program.lstMonHoc = await new MonHocBAL().LayLst();
-            if (Program.TK.Loai == 0)
-            {
-                Program.lstLopQL = await new PhanCongBAL().LayLst(Program.TK.ID);
-            }
+            //Program.lstMonHoc = await new MonHocBAL().LayLst();
+            ////if (Program.TK.IDChucVu == 0)
+            ////{
+            ////    Program.lstLopQL = await new PhanCongBAL().LayLst(Program.TK.ID);
+            ////}
 
-            this.Show();
+            //this.Show();
         }
 
         private void txtLopHoc_TextChanged(object sender, EventArgs e)
@@ -340,6 +273,16 @@ namespace GUI
             TextBox txt = sender as TextBox;
                 txt.Text = "Nhập ID hoặc Tên lớp";
                 txt.ForeColor = Color.Gray;
+        }
+
+        private void dgvDanhSachLop_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

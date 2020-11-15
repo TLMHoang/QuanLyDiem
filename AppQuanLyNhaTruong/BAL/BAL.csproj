@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChucVU.cs" />
+    <Compile Include="ChucVuBAL.cs" />
     <Compile Include="CInterface.cs" />
     <Compile Include="DanhSachTietDayBAL.cs" />
     <Compile Include="DiemBAL.cs" />

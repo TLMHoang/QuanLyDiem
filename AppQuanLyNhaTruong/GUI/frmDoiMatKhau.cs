@@ -32,9 +32,9 @@ namespace GUI
 
         private async void btnCapNhatThongTin_Click(object sender, EventArgs e)
         {
-            if ((await tkBAL.DangNhap(Program.TK.TaiKhoan, txtMatKhau.Text)).Rows.Count == 1)
+            if ((await tkBAL.DangNhap(Program.TK.UserName, txtMatKhau.Text)) != null)
             {
-                Program.TK.MatKhau = txtNhapLaiMatKhau.Text;
+                Program.TK.UserName = txtNhapLaiMatKhau.Text;
                 if (await tkBAL.CapNhap(Program.TK) != -1)
                 {
                     MessageBox.Show("Đổi mật khẩu thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);

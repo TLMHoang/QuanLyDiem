@@ -14,7 +14,10 @@ namespace DAL.SQL
 
     public class SQLHelper
     {
-        public string connStr = ConfigurationManager.ConnectionStrings["Database"].ConnectionString;
+        public string connStr = @"Data Source=125.212.218.20;" +
+                                @"Initial Catalog=nxtckedu_QLD;" +
+                                @"User id=nxtckedu_H;" +
+                                @"Password=H0@ng*9699;";
 
         public async Task<int> ExecuteNonQuery(string ProcName, params SqlParameter[] parameters)
         {
