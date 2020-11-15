@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace BAL
 {
-    public class DiemBAL : CInterface<Diem>
+    public class TaiKhoanSinhVienBAL : CInterface<TaiKhoanSinhVien>
     {
-        DiemDAL db = new DiemDAL();
-        public async Task<int> CapNhap(Diem obj)
+        TaiKhoanSinhVienDAL db = new TaiKhoanSinhVienDAL();
+        public async Task<int> CapNhap(TaiKhoanSinhVien obj)
         {
             return await db.CapNhap(obj);
         }
@@ -22,24 +22,24 @@ namespace BAL
             return await db.Lay();
         }
 
-            public async Task<DataTable> LayID(int ID)
-            {
-                return await db.Lay(ID);
-            }
-
-        public async Task<List<Diem>> LayLst()
+        public async Task<DataTable> LayID(int ID)
         {
-            List<Diem> lst = new List<Diem>();
+            return await db.Lay(ID);
+        }
+
+        public async Task<List<TaiKhoanSinhVien>> LayLst()
+        {
+            List<TaiKhoanSinhVien> lst = new List<TaiKhoanSinhVien>();
 
             foreach (DataRow dr in (await LayDT()).Rows)
             {
-                lst.Add(new Diem(dr));
+                lst.Add(new TaiKhoanSinhVien(dr));
             }
 
             return lst;
         }
 
-        public async Task<int> Them(Diem obj)
+        public async Task<int> Them(TaiKhoanSinhVien obj)
         {
             return await db.Them(obj);
         }

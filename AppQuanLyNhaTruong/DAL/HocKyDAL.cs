@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class HocKyDAL : SQL.SQLHelper, CInterface<HocKy>
+    public class HocKyDAL : SQL.SQLHelper, CInterface<HocKy>
     {
         public async Task<int> CapNhap(HocKy obj)
         {

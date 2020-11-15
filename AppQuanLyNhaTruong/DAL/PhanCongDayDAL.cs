@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class PhanCongDayDAL : SQL.SQLHelper, CInterface<PhanCongDay>
+    public class PhanCongDayDAL : SQL.SQLHelper, CInterface<PhanCongDay>
     {
         public async Task<int> CapNhap(PhanCongDay obj)
         {

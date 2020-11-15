@@ -1,18 +1,18 @@
-﻿using DAL;
-using DTO;
+﻿using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL;
 
 namespace BAL
 {
-    public class DiemBAL : CInterface<Diem>
+    public class HocKyBAL : CInterface<HocKy>
     {
-        DiemDAL db = new DiemDAL();
-        public async Task<int> CapNhap(Diem obj)
+        HocKyDAL db = new HocKyDAL();
+        public async Task<int> CapNhap(HocKy obj)
         {
             return await db.CapNhap(obj);
         }
@@ -22,24 +22,24 @@ namespace BAL
             return await db.Lay();
         }
 
-            public async Task<DataTable> LayID(int ID)
-            {
-                return await db.Lay(ID);
-            }
-
-        public async Task<List<Diem>> LayLst()
+        public async Task<DataTable> LayID(int ID)
         {
-            List<Diem> lst = new List<Diem>();
+            return await db.Lay(ID);
+        }
+
+        public async Task<List<HocKy>> LayLst()
+        {
+            List<HocKy> lst = new List<HocKy>();
 
             foreach (DataRow dr in (await LayDT()).Rows)
             {
-                lst.Add(new Diem(dr));
+                lst.Add(new HocKy(dr));
             }
 
             return lst;
         }
 
-        public async Task<int> Them(Diem obj)
+        public async Task<int> Them(HocKy obj)
         {
             return await db.Them(obj);
         }

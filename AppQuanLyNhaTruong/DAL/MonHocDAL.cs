@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class MonHocDAL : SQL.SQLHelper, CInterface<MonHoc>
+    public class MonHocDAL : SQL.SQLHelper, CInterface<MonHoc>
     {
         public async Task<int> CapNhap(MonHoc obj)
         {

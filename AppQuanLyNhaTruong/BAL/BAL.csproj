@@ -42,10 +42,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CInterface.cs" />
-    <Compile Include="CupHocBAL.cs" />
+    <Compile Include="DanhSachTietDayBAL.cs" />
     <Compile Include="DiemBAL.cs" />
     <Compile Include="HeDiemBAL.cs" />
+    <Compile Include="HocKyBAL.cs" />
+    <Compile Include="KhoaBAL.cs" />
+    <Compile Include="LKHeLoaiDiemBAL.cs" />
+    <Compile Include="LoaiDiemBAL.cs" />
+    <Compile Include="LopBAL.cs" />
+    <Compile Include="MonHocBAL.cs" />
+    <Compile Include="NienKhoaBAL.cs" />
+    <Compile Include="PhanCongDayBAL.cs" />
+    <Compile Include="PhanCongMonBAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaiKhoanSinhVienBAL.cs" />
+    <Compile Include="TaiKhoanTruongBAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
