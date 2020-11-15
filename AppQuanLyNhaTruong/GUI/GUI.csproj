@@ -50,7 +50,7 @@
     <Compile Include="frmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDoiMatKhau.designer.cs">
+    <Compile Include="frmDoiMatKhau.Designer.cs">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">

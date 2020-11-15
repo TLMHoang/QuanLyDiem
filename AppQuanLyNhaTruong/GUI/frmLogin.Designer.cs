@@ -44,7 +44,7 @@
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.ForeColor = System.Drawing.Color.Gray;
+            this.lblLogin.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblLogin.Location = new System.Drawing.Point(176, 146);
             this.lblLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogin.Name = "lblLogin";
@@ -56,7 +56,7 @@
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.ForeColor = System.Drawing.Color.Gray;
+            this.lblUserName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblUserName.Location = new System.Drawing.Point(11, 197);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserName.Name = "lblUserName";
@@ -91,7 +91,7 @@
             // 
             this.lblPassWord.AutoSize = true;
             this.lblPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassWord.ForeColor = System.Drawing.Color.Gray;
+            this.lblPassWord.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblPassWord.Location = new System.Drawing.Point(35, 240);
             this.lblPassWord.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassWord.Name = "lblPassWord";
@@ -101,7 +101,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnLogin.BackColor = System.Drawing.Color.SteelBlue;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -117,16 +117,16 @@
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnExit.BackColor = System.Drawing.Color.SteelBlue;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(147, 337);
+            this.btnExit.Location = new System.Drawing.Point(147, 340);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(269, 28);
+            this.btnExit.Size = new System.Drawing.Size(269, 25);
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -137,7 +137,7 @@
             this.btnForgotPass.FlatAppearance.BorderSize = 0;
             this.btnForgotPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnForgotPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForgotPass.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnForgotPass.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnForgotPass.Location = new System.Drawing.Point(231, 267);
             this.btnForgotPass.Margin = new System.Windows.Forms.Padding(2);
             this.btnForgotPass.Name = "btnForgotPass";
@@ -149,6 +149,7 @@
             // 
             // picLogin
             // 
+            this.picLogin.BackColor = System.Drawing.Color.Transparent;
             this.picLogin.Image = global::GUI.Properties.Resources.Image_login2;
             this.picLogin.Location = new System.Drawing.Point(205, 11);
             this.picLogin.Margin = new System.Windows.Forms.Padding(2);
