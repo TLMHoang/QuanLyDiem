@@ -26,6 +26,7 @@ namespace DTO
         public string Mail { get; set; }
 
         public int IDChucVu { get; set; }
+        public object Rows { get; set; }
 
         public TaiKhoanTruong(int iD, string username,string tengv,bool gioitinh,string sdt,string mail, int iDChucVu)
         {

@@ -163,6 +163,25 @@ namespace GUI
         {
 
         }
+
+        private void txtPassWord_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            
+           DialogResult dr= MessageBox.Show("Ban co chac chan muon thoat", "thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dr==DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                this.Show();
+            }
+        }
     }
 }
 /*
